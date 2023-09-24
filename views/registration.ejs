@@ -1,0 +1,68 @@
+<%-include('common/header')%>
+
+
+    <div class="container">
+        <div class="row reg">
+            <div class="col-md-6 ">
+                <h1 class="text-center">Registration</h1>
+                <form action="/registration" method="post">
+
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" class="form-control" name="FirstName">
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" class="form-control" name="LastName">
+                    </div>
+
+                    <div class="form-group  ">
+
+                        <div>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" name="Email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Phone">Phone number</label>
+                        <input type="tel" class="form-control" name="Phone">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Password">Password</label>
+                        <input type="password" class="form-control" name="Password">
+                    </div>
+                    <div class="form-group">
+                        <label for="CPassword">Conform Password</label>
+                        <input type="password" class="form-control" name="CPassword">
+                    </div>
+
+
+                    <input type="submit" class="btn btn-danger">
+
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <%-include('common/footer')%>

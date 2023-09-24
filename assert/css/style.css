@@ -1,0 +1,732 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin&family=Mukta&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Cabin', sans-serif;
+font-family: 'Mukta', sans-serif;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  background-color: #f8f8f8;
+  justify-content: center;
+}
+
+.home-text {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: mogena;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  
+}
+.home-text li a {
+  color: whitesmoke;
+}
+
+
+
+
+
+.logo img {
+  max-width: 100px;
+  height: auto;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin-right: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ff7f50;
+}
+
+.flowerbold {
+  font-weight: bold;
+  font-size: 30px;
+  color: rgb(179, 192, 179);
+}
+
+.search_btn {
+  height: 39px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-end;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background-color: #f8f8f8;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    display: none;
+  }
+
+  .navbar.active .nav-links {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+}
+
+@media (min-width: 340) {
+  .logo img {
+    max-width: 50px;
+    height: auto;
+  }
+}
+
+/* FESTIVE COMBO OFFER start */
+.festive {
+  justify-content: center;
+  display: flex;
+  padding-top: 12px;
+  font-weight: bold;
+}
+/* FESTIVE COMBO OFFER end */
+
+/* marque tag start*/
+.running-text {
+  display: flex;
+  font-weight: bold;
+  color: green;
+  background-color: whitesmoke;
+  text-transform: uppercase;
+}
+/* marque tag end*/
+
+.img-fit {
+  height: 350px;
+}
+
+/* ###########################change images on hover css start ######################################################*/
+
+.image-container {
+  display: inline-block;
+}
+
+#image #image1 #image2 #image3 {
+  transition: transform 0.1s ease;
+}
+
+#image #image1 #image2 #image3:hover {
+  transform: scale(1.9);
+}
+
+.images-container {
+  display: inline-block;
+}
+
+#images #images1 #images2 #images3 {
+  transition: transform 0.1s ease;
+}
+
+#images #images1 #images2 #images3:hover {
+  transform: scale(1.9);
+}
+
+/* ###########################change images on hover css end ######################################################*/
+
+/*  ########################################################## card start ##########################################################  */
+.scaler {
+  position: relative;
+  width: 250px;
+  height: 400px;
+  transition: transform 0.3s;
+  border: none;
+}
+.card-text a {
+  text-decoration: none;
+}
+.card-text a strong {
+  color: black;
+  text-align: center;
+}
+.card-text a strong:hover {
+  color: rgb(10, 163, 163);
+  list-style: underline;
+}
+
+.scaler:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-content {
+  padding: 15px;
+}
+
+.card-title {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  font-size: 14px;
+  color: #777;
+}
+
+/*  ########################################################## card end ##########################################################  */
+
+/*  ########################################################## view all start ##########################################################  */
+.veiw {
+  justify-content: center;
+  text-align: center;
+  display: flex;
+}
+.veiw .btn {
+  border-color: gray;
+}
+.veiw .btn a {
+  text-decoration: none;
+  color: black;
+}
+/*  ########################################################## view all end  ########################################################## */
+
+.newarrivals,
+.shop-by,
+.collections,
+.bestseller,
+.product-features {
+  justify-content: center;
+  text-align: center;
+  display: flex;
+  font-weight: bold;
+}
+
+.card-texts {
+  text-align: center;
+  justify-content: center;
+  display: flex;
+}
+.card-texts a {
+  text-decoration: none;
+  color: black;
+  font-size: 10px;
+  font-weight: bold;
+}
+.rs {
+  text-align: center;
+  justify-content: center;
+  display: flex;
+}
+.rs a {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.add-cart .btn {
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -10px;
+}
+.col {
+  flex: 25%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.image {
+  max-width: 100%;
+  height: auto;
+}
+.text {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.text p {
+  font-weight: bold;
+  color: gray;
+}
+.degine img {
+  max-width: 100%;
+}
+.degine-text h3,
+p {
+  text-align: left;
+  justify-content: left;
+}
+.degine-text button {
+  justify-content: left;
+  text-align: left;
+  background-color: rgb(61, 116, 61);
+  color: white;
+}
+
+@media screen and (max-width: 768px) {
+  .text {
+    font-size: 25px;
+  }
+}
+
+/* brand-log */
+.brand-logo {
+  justify-content: space-around;
+}
+
+/* ####################################################### ABOUT SEACTION start #################################################3 */
+
+.about h2,
+h1 {
+  text-decoration: underline;
+  font-size: 40px;
+  color: grey;
+}
+
+.about-text p {
+  line-height: 40px;
+  font-family: serif;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .about-text p,
+  h1 {
+    font-size: 20px;
+    line-height: 30px;
+    text-align: justify;
+  }
+}
+
+/* ####################################################### ABOUT SEACTION end #################################################3 */
+
+/* ####################################################### ABOUT SEACTION end #################################################3 */
+
+/* ##################################################  start footer ##################################################### */
+
+/* Same as before */
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: rgb(147, 177, 167);
+}
+
+.footer-column {
+  flex: 1;
+  padding: 0 20px;
+}
+
+.footer-column h3 {
+  color: #1f1717;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin: 5px 0;
+}
+
+.footer-column a {
+  color: #1f1717;
+  text-decoration: none;
+}
+.footer-column a:hover {
+  color: #07ff1c;
+  text-decoration: none;
+}
+
+.footer-column p {
+  color: #1f1717;
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+  }
+
+  .footer-column {
+    flex: none;
+    padding: 0;
+  }
+}
+
+/* #####################################################end footer$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ */
+
+.email-container {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  max-width: 300px;
+}
+
+.email-container input[type="email"] {
+  flex: 1;
+  border: none;
+  padding: 8px;
+  border-radius: 5px;
+  outline: none;
+}
+.email-container input[placeholder="enter your email"] {
+  justify-content: center;
+  text-align: center;
+}
+.email-container button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.email-container button:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+  .email-container {
+    flex-direction: column;
+    max-width: none;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .email-container input[type="email"],
+  .email-container button {
+    width: 100%;
+    margin: 5px 0;
+  }
+}
+
+/*############################################# Add your general styling here #############################################*/
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icon img {
+  width: 100%;
+  height: auto;
+}
+
+.social-icon.facebook {
+  background-color: #1877f2;
+}
+
+.social-icon.instagram {
+  background-color: #e4405f;
+}
+
+.social-icon.twitter {
+  background-color: #1da1f2;
+}
+
+.social-icon.github {
+  background-color: #333;
+}
+
+.social-icon:hover {
+  transform: scale(1.1);
+}
+
+/* ##################################################  end footer #####################################################/
+
+  /*  ############################################################## login start ############################################################## */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  
+}
+
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: green;
+  font-family: mongeo;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+
+input {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px;
+  background-color: #161a14;
+  color: rgb(214, 204, 204);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login-options {
+  margin-top: 15px;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: #c2bcbc;
+  margin: 0 10px;
+}
+/*  ############################################################## login login ############################################################## */
+
+/* ################################################################## HOME START CSS###################################################### */
+
+.home-img img {
+  width: 100%;
+  height: auto;
+}
+.home h1 {
+  font-size: 40px;
+  color: gray;
+}
+.rate p {
+  font-size: 20px;
+}
+.D45 {
+  position: relative;
+  background: transparent;
+  color: black;
+  font-weight: bold;
+}
+.D45:hover {
+  background-color: green;
+}
+
+/* .counter {
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+button {
+  
+  padding: 10px 20px;
+  font-size: inherit;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #f0f0f0;
+} */
+
+/* Add your general styling here */
+
+.product {
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+  background-color: #608078;
+}
+
+input[type="number"] {
+  width: 50%;
+  margin: 10px;
+}
+
+#price {
+  justify-content: center;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+button {
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/* button:hover {
+  background-color: #f0f0f0;
+} */
+
+#addToCart {
+  width: 100%;
+}
+
+/* ################################################################## HOME END CSS###################################################### */
+
+/* #################################################### START CONTACT US ######################################################################## */
+
+.pvt {
+  font-size: 30px;
+  text-decoration: underline;
+}
+.location {
+  font-size: 20px;
+  padding-top: 20px;
+}
+.phone,
+.email,
+.date_time {
+  font-size: 20px;
+  color: black;
+}
+
+/* Your styles here */
+.contact-form {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.image-container1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+/* #################################################### END CONTACT US ######################################################################## */
+
+/*  #################################################### start award ############################################################*/
+
+/* Apply a clearfix to the row to clear any floats */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Define the column styles */
+.col {
+  float: left;
+  width: 100%;
+  /* width: 33.33%; Three columns, each taking up one-third of the width */
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* Responsive layout for smaller screens */
+/* @media(min-width:576px)and (max-width: 768px) {
+  .col {
+    width: 50%;  Two columns, each taking up half of the width 
+  }
+}
+
+/* Responsive layout for even smaller screens */
+/*@media (max-width: 576px) {
+  .col {
+    width: 50%;  Single column, taking up full width 
+  }
+} */
+
+/* Make images responsive */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* #################################################### start award ############################################################ */
+
+/* registration form */
+.reg {
+  justify-content: center;
+  align-items: center;
+}
+.gen {
+  display: inline;
+}
+
+/* regiestration form  start*/
+
+.btn {
+  justify-content: center;
+  align-items: center;
+}
+
+/* regiestration form  end*/
+
+/* brandlogo */
+
+brand-logo {
+  margin-left: auto;
+  margin-right: auto;
+}

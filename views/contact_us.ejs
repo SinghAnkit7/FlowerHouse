@@ -1,0 +1,78 @@
+<%-include('common/header')%>
+
+
+
+
+<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="assert/images/contact_banner.jpg" class="d-block w-100" alt="...">
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+<div class="container text-center m-auto mt-5">
+    <div class="row">
+      <div class="col-md-6 degine-text">
+        <h5 class="pvt">Frontier Polymers Pvt Ltd</h5>
+        <p class="location">Sector 7 Dwarka, Dwarka, Delhi
+            New Delhi - 110030, India</p>
+
+            
+          <a href="tel:9199286971"><p class="phone">Phone: +91 9199286971</p></a> 
+
+
+          <a href="mailto:ankitsingh.se71@gmail.com"><p class="email">Email: ankitsingh.se71@gmail.com</p></a>
+
+
+
+            <p class="date_time">Mon - fri, 10:30am - 1pm IST</p>
+      </div>
+      <div class="col-md-6 degine">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.4573215414484!2d77.0713347!3d28.586054299999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1b17229fd6d3%3A0xb4dda3af442c011e!2sRamphal%20Chowk%20Rd%2C%20Sector%207%20Dwarka%2C%20Dwarka%2C%20Delhi!5e0!3m2!1sen!2sin!4v1693151444048!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+   </div>
+
+
+
+
+
+
+
+
+  
+   <div class="contact-form" style="display: flex;justify-content: center;align-items: center;flex-direction: column;">
+    <h2>Contact Us</h2>
+    <form id="contactForm" action="" method="post">
+        <input type="text" id="fullName" name="fullName" placeholder="Full Name" required>
+        <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Phone Number" required>
+        <input type="email" id="email" name="email" placeholder="Email" required>
+        <textarea id="message" name="message" placeholder="Message" rows="7" required></textarea>
+        <button type="submit">Send</button>
+    </form>
+</div>
+<script src="script.js">
+    const contactForm = document.getElementById("contactForm");
+
+contactForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+});
+</script>
+
+
+
+
+
+
+
+
+
+<%-include('common/footer')%>
