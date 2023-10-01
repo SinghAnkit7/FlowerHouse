@@ -1,6 +1,8 @@
 const express = require('express');
 const multer = require('multer');
 
+
+
 const app=express();
 const router = express.Router();
 
@@ -11,12 +13,22 @@ const productModel = require('./model/productSchema');
 const contactModel = require('./model/contactschema');
 
 
-
 const bodyParser = require('body-parser');
 const { model } = require('mongoose');
 const { fileLoader } = require('ejs');
 
+
 app.use(bodyParser.urlencoded({extended:true}));
+
+// cookies 
+var cookiewParser = require("cookie-parser");
+var session = require("express-session")
+
+const cookieParser = require('cookie-parser');
+
+// mongoose.set('strictQuery', false);
+
+
 
 
 app.set('view engine','ejs');
@@ -24,12 +36,35 @@ app.set('view engine','ejs');
 app.use(express.static('views'));
 app.use('/css',express.static(__dirname+'/node_modules/bootstrap/dist/css'));
 app.use('/css',express.static(__dirname+'/node_modules/bootstrap/dist/js'));
-app.use('/assert',express.static('assert'))
+app.use('/assert',express.static('assert'));
+app.use(cookieParser());
+app.use(
+    session({
+        key: "user_sid",
+        secret: "somerandonstuffs",
+        resave: false,
+        saveUninitialized: false,
+        cookie: {
+            expires: 600000,
+        },
+    })
+);
 
 
-router.get('/',(req,res)=>{
-    res.render('index');
+app.use((req,res, next)=>{
+    if(req.cookies.user_sid && !req.session.user){
+        res.clearCookie("user_sid");
+        res.redirect("/dashboard/index");
+    }
+    next();
 })
+
+
+
+ 
+// router.get('/',(req,res)=>{
+//     res.render('index');
+// })
 
 router.get('/about_us',(req,res)=>{
     res.render('about_us')
@@ -38,6 +73,34 @@ router.get('/about_us',(req,res)=>{
 router.get('/login',(req,res)=>{
     res.render('login')
 })
+
+router.post('/login',async(req,res)=>{
+    var email = req.body.email,
+    password= req.body.password;
+    
+    try{
+        var user = await userModel.findOne({email:email})
+        .exec();
+       if(!user){
+           res.redirect("/dashboard/index");
+       }
+    
+       user.comparePassword(password,(error,match)=>{
+        if(!match){
+            res.redirect("/login");
+        }
+    
+       });
+
+       req.session.user = user;
+       res.redirect("/dashboard/index")
+    }catch (error){
+        console.log(error)
+    }
+});
+  
+
+
 
 
 router.get('/search_bar',(req,res)=>{
@@ -70,9 +133,14 @@ router.get('/award',(req,res)=>{
 router.get('/signup',(req,res)=>{
     res.render('dashboard/signup')
 })
-router.get('/dashboard/index',(req,res)=>{
-    res.render('dashboard/index')
-})
+router.get('/dashboard/index',function(req,res){
+    if(req.session.user && req.cookies.user_sid){
+    res.redirect('dashboard/index',{data:data})
+    }
+});
+
+
+
 
 
 
@@ -201,7 +269,7 @@ router.get("/view-registration",async(req,res)=>{
     }catch(err){
         console.log(err);
     }
-    });
+    }); 
 
 
 
@@ -214,7 +282,7 @@ router.get("/delete/:id", async (req, res)=>{
         const data = await userModel.findByIdAndRemove(req.params.id);
         console.log(data)
         res.redirect('../view-registration')
-
+M
         // res.send('<script>"window.location.href://localhost:2000/viewmovie";</script>')
     } catch(err){
         console.log(err);
@@ -308,13 +376,24 @@ router.get('/add-product',(req,res)=>{
     res.render('dashboard/add-product')
 })
 
+router.get("/",async(req,res)=>{
+    try{
+        const productdata =await productModel.find({})
+        res.render('index',{productdata: productdata});
+        console.log(productdata);
+    }catch(err){
+        console.log(err);
+    }
+    });
+
+
 //////////////////////////////// create add-product API/////////////////////////////////////
 router.post('/add-product', upload.single('fileupload'),(req,res)=>{
     var userproduct = {
         productname       : req.body.productname,
         productdescription: req.body.productdescription,
         price             : req.body.price,
-        fileupload       : req.file.fileupload
+        fileupload       : req.file.filename
         }                                                                                                                                                                                                                        
         
     var addproduct=new  productModel(userproduct);

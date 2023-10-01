@@ -45,20 +45,25 @@
 
     <!-- ##############################################################CARD 1 START################################################# -->
 
-
-    <div class="container py-5">
+   
+  <div class="container py-5">
       <div class="row">
-        <div class="col-sm-6 col-md-3 col-lg-3">
+       
+
+       
+         <div class="col-sm-6 col-md-3 col-lg-3"> 
           <div class="grid-list image-container  image-container1">
             <a href="gema"><img id="image" src="assert/images/col1-1.webp" class="img-fluid" alt="..."></a>
             <div class="card-content">
               <p class="card-text">
-                <a href="gema.ejs"><strong> GEMA - MEDIUM PLANTER COMBO.. (PACK OF 2) </strong><br />
-                  From Rs. 4,138.00 <del> Rs. 4,598.00 </del></a>
+                <a href="gema.ejs"><strong>ROSA - LARGE PLANTER COMBO.. (PACK OF 2) </strong><br />
+                  From Rs. 5,938.00 <del> Rs. 6,598.00 </del></a>
               </p>
             </div>
           </div>
+          
         </div>
+
         <div class="col-sm-6 col-md-3 col-lg-3">
           <div class="grid-list image-container image-container1">
             <a href="stella"><img id="image1" src="assert/images/col1-2.jpg" class="img-fluid" alt="..."></a>
@@ -93,13 +98,10 @@
             </div>
           </div>
         </div>
+      
       </div>
     </div>
-
-
-
-
-
+    
 
     <div class="container py-5">
       <div class="row">
@@ -152,11 +154,38 @@
     </div>
 
 
-    <!--  ##############################################################CARD 2 END--#################################################>
+
+    
+
+    <!--  ##############################################################CARD 2 END--#################################################-->
 
 
+      <div class="container">
+        <div class="row">
+          <% if(productdata.length>0) { %>
+            <% for(var i=0; i<productdata.length; i++) { %>
+          <div class="col-4">
+            <div class="card">
+              <div class="card-img">
+            <img src="/assert/images/<%= productdata[i].fileupload %>">   
+              </div>
+              <div class="card-body">
+                <a href="gema.ejs"><strong> <%= productdata[i]. productname %></strong><br />
+                  Rs. <%= productdata[i].price %></a>
+               
+               
+              </div>
+            </div>
+          </div>
+          <% } %>
+          <% } else { %>
+            No Record Found 
+          <% } %>
+        </div>
+      </div>
 
- #################################################view all start ###################################################3-->
+
+ <!-- <--#################################################view all start ###################################################3--> -->
 
 
     <div class="veiw mt-4">

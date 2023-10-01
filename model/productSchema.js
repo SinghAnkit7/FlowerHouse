@@ -15,7 +15,7 @@ const productSchema = mongoose.Schema({
     },
     fileupload:{
         type:String,
-        require:true
+        
     }
 });
 
